@@ -12,5 +12,5 @@ form.addEventListener("submit", (event) => {
             score += 1;
         }
     })
-    console.log(score);
+    console.log(score + " " );
 });
