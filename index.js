@@ -1,6 +1,7 @@
 const correctAnswer = ["A", "A", "A", "A", "A"];
 const form = document.querySelector(".quiz-form");
-
+const result = document.querySelector(".result");
+const questions = document.querySelectorAll('.question');
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -10,7 +11,12 @@ form.addEventListener("submit", (event) => {
     userAnswers.forEach((answer, index) => {
         if (answer === correctAnswer[index]){
             score += 1;
+            questions[index].classList.add("correct");        
+        } else{
+            questions[index].classList.add("wrong");
         }
     })
-    console.log(score + " " );
-});
+    scrollTo(0, 0);
+    result.classList.remove("hide");
+    result.querySelector("p").textContent = `Your score is ${score}/5`;
+}); 
