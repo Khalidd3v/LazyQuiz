@@ -1,4 +1,4 @@
-const correctAnswer = ["A", "A", "A", "A", "A"];
+const correctAnswer = ["A", "D", "A", "C", "C"];
 const form = document.querySelector(".quiz-form");
 const result = document.querySelector(".result");
 const questions = document.querySelectorAll('.question');
@@ -18,5 +18,5 @@ form.addEventListener("submit", (event) => {
     })
     scrollTo(0, 0);
     result.classList.remove("hide");
-    result.querySelector("p").textContent = `Your score is ${score}/5`;
+    result.querySelector("p").textContent = `Your score is ${score}/5 Questions.`;
 }); 
